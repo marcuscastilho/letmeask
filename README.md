@@ -1,3 +1,7 @@
+# View Project with Firebase Hosting
+
+Open: https://letmeask-2d300.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
