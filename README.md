@@ -17,23 +17,23 @@
 </h1>
 
 <p align="center">
-  <a href="#projeto">Projeto</a>&nbsp; &nbsp; |&nbsp; &nbsp;
-  <a href="#tecnologias">Tecnologias</a>&nbsp; &nbsp; |&nbsp; &nbsp;
-  <a href="#como-executar">Como executar</a>&nbsp; &nbsp; |&nbsp; &nbsp;
-  <a href="#layout">Layout</a>&nbsp; &nbsp; |&nbsp; &nbsp;
-  <a href="#licenca">Licença</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#computer-projeto">Projeto</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#hammer_and_wrench-tecnologias">Tecnologias</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#rocket-como-executar">Como executar</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#🔖-layout">Layout</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#memo-licença">Licença</a>&nbsp; &nbsp; |&nbsp; &nbsp;
 </p>
 
 
 <br>
 
-## :projeto: 💻 Projeto
+## 💻 Projeto
 
 Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
 
 Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
 
-## :tecnologias: 🧪 Tecnologias
+## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -46,7 +46,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Eslint](https://eslint.org/docs/user-guide/command-line-interface)
 - [Prettier](https://prettier.io/)
 
-## :como-executar: 🚀 Como executar
+## 🚀 Como executar
 
 Clone o projeto e acesse a pasta do mesmo.
 
@@ -70,7 +70,7 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
 
 
-## :layout: 🔖 Layout
+## 🔖 Layout
 
 Você pode visualizar o layout do projeto através do link abaixo:
 
@@ -78,7 +78,7 @@ Você pode visualizar o layout do projeto através do link abaixo:
 
 Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
-## :licencas: 📝 License
+## 📝 License
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
