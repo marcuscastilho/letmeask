@@ -12,7 +12,7 @@
 
 <h1 align="center">
   <a href="https://letmeask-2d300.web.app/">
-    <img alt="Letmeask" src="./public/page.png" />
+    <img alt="Letmeask" src="./public/app.png" />
   </a>
 </h1>
 
