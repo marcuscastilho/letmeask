@@ -1,44 +1,44 @@
-import { FormEvent, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { FormEvent, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
-import { useTheme } from "../hooks/useTheme";
-import { useAuth } from "../hooks/useAuth";
-import { database } from "../services/firebase";
+import { useTheme } from '../hooks/useTheme'
+import { useAuth } from '../hooks/useAuth'
+import { database } from '../services/firebase'
 
-import { Button } from "../components/Button";
+import { Button } from '../components/Button'
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
-import logoWhiteImg from "../assets/images/logoWhite.svg";
+import illustrationImg from '../assets/images/illustration.svg'
+import logoImg from '../assets/images/logo.svg'
+import logoWhiteImg from '../assets/images/logoWhite.svg'
 
-import "../styles/auth.scss";
+import '../styles/auth.scss'
 
 export function NewRoom() {
-  const { theme, toggleTheme } = useTheme();
-  const { user, signOut } = useAuth();
-  const history = useHistory();
-  const [newRoom, setNewRoom] = useState("");
+  const { theme, toggleTheme } = useTheme()
+  const { user, signOut } = useAuth()
+  const history = useHistory()
+  const [newRoom, setNewRoom] = useState('')
 
   async function handleCreateRoom(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
-    if (newRoom.trim() === "") {
-      return;
+    if (newRoom.trim() === '') {
+      return
     }
 
-    const roomRef = database.ref("rooms");
+    const roomRef = database.ref('rooms')
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id,
-    });
+      authorId: user?.id
+    })
 
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/rooms/${firebaseRoom.key}`)
   }
 
-  async function handleSignOutRoom(){
+  async function handleSignOutRoom() {
     signOut()
-    history.push(`/`);
+    history.push(`/`)
   }
 
   return (
@@ -50,7 +50,7 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={theme === 'dark' ? logoWhiteImg : logoImg } alt="Letmeask" />
+          <img src={theme === 'dark' ? logoWhiteImg : logoImg} alt="Letmeask" />
 
           {user && (
             <button className="logout-room" onClick={handleSignOutRoom}>
@@ -63,7 +63,7 @@ export function NewRoom() {
             <input
               type="text"
               placeholder="Nome da sala"
-              onChange={(event) => setNewRoom(event.target.value)}
+              onChange={event => setNewRoom(event.target.value)}
               value={newRoom}
             />
             <Button type="submit">Criar sala</Button>
@@ -75,5 +75,5 @@ export function NewRoom() {
         </div>
       </main>
     </div>
-  );
+  )
 }

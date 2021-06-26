@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -20,6 +20,10 @@ export function Home() {
   const { user, signInWithGoogle } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const [roomCode, setRoomCode] = useState("");
+
+  useEffect(() => {
+    console.log(theme)
+  },[theme])
 
   async function handleCreateRoom() {
     if (!user) {
