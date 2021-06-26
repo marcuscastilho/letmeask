@@ -21,6 +21,12 @@
     background: #fff;
     border: 1px solid #835afd;
     color: #835afd;
+
+    &.dark {
+      background: #44475a;
+      color: #fff;
+      border: 3px solid #6272a4;
+    }
   }
 
   &:not(:disabled):hover {

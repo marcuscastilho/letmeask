@@ -1,14 +1,16 @@
 import { useState, FormEvent } from "react";
 import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 import { useRoom } from "../hooks/useRoom";
 import { database } from "../services/firebase";
 
-import logoImg from "../assets/images/logo.svg";
+import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Question } from "../components/Question";
 
-import { RoomCode } from "../components/RoomCode";
+import emptyImg from "../assets/images/empty-questions.svg";
 
 import "../styles/room.scss";
 
@@ -17,10 +19,11 @@ type RooomParamsType = {
 };
 
 export function Room() {
+  const { theme, toggleTheme } = useTheme();
   const [newQuestion, setNewQuestion] = useState("");
   const params = useParams<RooomParamsType>();
   const roomId = params.id;
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const { questions, title } = useRoom(roomId);
 
   async function handleSendQuestion(event: FormEvent) {
@@ -31,7 +34,7 @@ export function Room() {
     }
 
     if (!user) {
-      // colocar toast
+      toast.error("Usuário não está logado.");
       throw new Error("Usuário não está logado.");
     }
 
@@ -65,13 +68,9 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Letmeask" />
-          <RoomCode code={roomId} />
-        </div>
-      </header>
+    <div id="page-room" className={theme}>
+      <Header roomId={roomId} />
+      <Toaster />
 
       <main>
         <div className="room-title">
@@ -94,7 +93,8 @@ export function Room() {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>.
+                Para enviar uma pergunta,{" "}
+                <button onClick={signInWithGoogle}>faça seu login</button>.
               </span>
             )}
 
@@ -146,6 +146,17 @@ export function Room() {
               </Question>
             );
           })}
+
+          {questions.length === 0 && (
+            <div className="empty-questions">
+              <img src={emptyImg} alt="Mensagens" />
+              <h1>Nenhuma pergunta por aqui...</h1>
+              <p>
+                Envie o código desta sala para seus amigos e comecem a fazer
+                perguntas!
+              </p>
+            </div>
+          )}
         </div>
       </main>
     </div>

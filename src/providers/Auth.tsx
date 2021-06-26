@@ -12,6 +12,7 @@ type UserType = {
 type AuthProviderType = {
   user: UserType | undefined;
   signInWithGoogle: () => Promise<void>;
+  signOut:() => Promise<void>;
 };
 
 type AuthProviderProps = {
@@ -64,8 +65,13 @@ export function AuthProvider(props: AuthProviderProps) {
     }
   }
 
+  async function signOut(){
+    await auth.signOut();
+    setUser(undefined);
+  }
+
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
       {props.children}
     </AuthContext.Provider>
   );

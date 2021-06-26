@@ -55,7 +55,7 @@
       gap: 16px;
     }
 
-    button {  
+    button {
       border: 0;
       background: transparent;
       cursor: pointer;
@@ -79,6 +79,55 @@
 
       &:hover {
         filter: brightness(0.6);
+      }
+    }
+  }
+
+  &.dark {
+    background: #44475a;
+    border: 1px solid transparent;
+    color: #fff;
+
+    &.highlighted {
+      border: 1px solid #835afd;
+    }
+
+    &.answered {
+      background: #333;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    footer {
+      .user-info {
+        span {
+          color: #fff;
+        }
+      }
+
+      button {
+
+        &.like-button {
+          display: flex;
+          align-items: flex-end;
+          color: #737380;
+          gap: 8px;
+
+          &.liked {
+            color: #835afd;
+
+            svg path {
+              stroke: #835afd;
+              stroke-width: 2;
+            }
+          }
+        }
+
+        &:hover {
+          filter: brightness(0.6);
+        }
       }
     }
   }

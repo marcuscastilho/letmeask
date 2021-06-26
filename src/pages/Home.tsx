@@ -1,12 +1,16 @@
 import { FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 
 import { database } from "../services/firebase";
 import { Button } from "../components/Button";
 
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
+import logoWhiteImg from "../assets/images/logoWhite.svg";
 import googleImg from "../assets/images/google-icon.svg";
 
 import "../styles/auth.scss";
@@ -14,6 +18,7 @@ import "../styles/auth.scss";
 export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const [roomCode, setRoomCode] = useState("");
 
   async function handleCreateRoom() {
@@ -23,6 +28,7 @@ export function Home() {
 
     history.push("/rooms/new");
   }
+
 
   async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
@@ -34,14 +40,12 @@ export function Home() {
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists()) {
-      // colocar toast
-      alert("Sala inexistente.");
+      toast.error("Sala inexistente.");
       return;
     }
 
     if (roomRef.val().closedAt) {
-      // colocar toast
-      alert("Sala já fechada.");
+      toast.error("Sala já fechada.");
       return;
     }
 
@@ -49,7 +53,8 @@ export function Home() {
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" className={theme}>
+      <Toaster />
       <aside>
         <img src={illustrationImg} alt="Ilustração da Home Page" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
@@ -57,10 +62,12 @@ export function Home() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={theme === 'dark' ? logoWhiteImg : logoImg } alt="Letmeask" />
           <button className="create-room" onClick={handleCreateRoom}>
             <img src={googleImg} alt="Logo do Google" />
-            Crie sua sala com o Google
+            {user
+              ? ` Continuar como ${user.name}`
+              : "Crie sua sala com o Google"}
           </button>
 
           <div className="separator">ou entre em uma sala</div>
