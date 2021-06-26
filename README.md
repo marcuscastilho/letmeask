@@ -16,18 +16,37 @@
   </a>
 </h1>
 
+<p align="center">
+  <a href="#projeto">Projeto</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#tecnologias">Tecnologias</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#como-executar">Como executar</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#layout">Layout</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+  <a href="#licenca">Licença</a>&nbsp; &nbsp; |&nbsp; &nbsp;
+</p>
+
 
 <br>
 
-## 🧪 Tecnologias
+## :projeto: 💻 Projeto
+
+Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
+
+Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
+
+## :tecnologias: 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Firebase Auth](https://firebase.google.com/products/auth)
+- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
+- [Saas](https://sass-lang.com/)
+- [Chakra-Ui](https://chakra-ui.com/docs/getting-started)
+- [Eslint](https://eslint.org/docs/user-guide/command-line-interface)
+- [Prettier](https://prettier.io/)
 
-## 🚀 Como executar
+## :como-executar: 🚀 Como executar
 
 Clone o projeto e acesse a pasta do mesmo.
 
@@ -50,13 +69,8 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
 
-## 💻 Projeto
 
-Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
-
-Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
-
-## 🔖 Layout
+## :layout: 🔖 Layout
 
 Você pode visualizar o layout do projeto através do link abaixo:
 
@@ -64,7 +78,7 @@ Você pode visualizar o layout do projeto através do link abaixo:
 
 Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
 
-## 📝 License
+## :licencas: 📝 License
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
