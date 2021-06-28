@@ -27,7 +27,7 @@
 
 <br>
 
-## :computer:  Projeto
+## :computer: Projeto
 
 Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
 
@@ -42,11 +42,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Firebase Auth](https://firebase.google.com/products/auth)
 - [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
 - [Saas](https://sass-lang.com/)
-- [Chakra-Ui](https://chakra-ui.com/docs/getting-started)
 - [Eslint](https://eslint.org/docs/user-guide/command-line-interface)
 - [Prettier](https://prettier.io/)
 
-## :rocket:  Como executar
+## :rocket: Como executar
 
 Clone o projeto e acesse a pasta do mesmo.
 
